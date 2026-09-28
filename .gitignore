@@ -22,4 +22,5 @@ dist/
 #OS file
 .DS_Store
 reporting-labs.history
+.commandcode/taste
 
