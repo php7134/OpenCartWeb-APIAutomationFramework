@@ -1,0 +1,18 @@
+[
+{
+  "username": "invalid@openai.com",
+  "password": "wrong123"
+},
+{
+  "username": "",
+  "password": "pw123"
+},
+{
+  "username": "daniel.miller@test.com",
+  "password": ""
+}
+]
+
+
+
+

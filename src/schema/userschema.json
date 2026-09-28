@@ -1,0 +1,27 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "number"
+        },
+        "name": {
+            "type": "string"
+        },
+        "status": {
+            "type": "string"
+        },
+        "gender": {
+            "type": "string"
+        },
+        "email": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "id",
+        "name",
+        "status",
+        "gender",
+        "email"
+    ]
+}
