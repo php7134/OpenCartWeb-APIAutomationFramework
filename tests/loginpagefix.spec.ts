@@ -13,7 +13,7 @@ test.beforeEach(async ({ loginPage, page, browser, request }) => {
   await loginPage.goToLoginPage();
 });
 
-test('login page title test', async ({ loginPage }) => {
+test('@smoke login page title test', async ({ loginPage }) => {
   meta({ priority: 'P2', severity: 'minor', owner: 'php automation', story: 'US101', epic: 'ep007', feature: 'F30', issue: '09' })
 
   let pageTitle = await loginPage.getPageTitle();
@@ -24,7 +24,7 @@ test('login page title test', async ({ loginPage }) => {
 
 });
 
-test('forgot password link exist test', async ({ loginPage }) => {
+test('@regression forgot password link exist test', async ({ loginPage }) => {
 
   meta({ priority: 'P2', severity: 'critical', owner: 'tony', story: 'US101', epic: 'ep007', feature: 'F31', issue: '09' })
 
@@ -33,7 +33,7 @@ test('forgot password link exist test', async ({ loginPage }) => {
 
 });
 
-test('user is able to login  to  application test', async ({ loginPage, homePage }) => {
+test('@regression user is able to login  to  application test', async ({ loginPage, homePage }) => {
 
   meta({ priority: 'P1', severity: 'blocker', owner: 'tom', story: 'US101', epic: 'ep007', feature: 'F31', issue: '09' })
   await testData({ username: ' process.env.USERNAME', password: 'process.env.PASSWORD' }, 'Login');
@@ -74,7 +74,7 @@ test('user is able to login  to  application test', async ({ loginPage, homePage
 
 //DD_0: using test data from fixtures :sequence of test execution is important here, first the fixture will be executed and then the test method will be executed
 
-test(`user should not be able to login to app with invalid credentials with fixture data test`, async ({ loginPage, testData }) => {
+test(`@regression user should not be able to login to app with invalid credentials with fixture data test`, async ({ loginPage, testData }) => {
   for (let row of testData) {
 
     await loginPage.doLogin(row.username, row.password);
@@ -90,7 +90,7 @@ test(`user should not be able to login to app with invalid credentials with fixt
 let testCSVData = CsvHelper.readCsv('src/testdata/logindata.csv');
 for (let row of testCSVData) {
 
-  test(`user should not be able to login to app with invalid credentials with csv data test - ${row.username} - ${row.password}`, async ({ loginPage, homePage }) => {
+  test(`@regressionuser should not be able to login to app with invalid credentials with csv data test - ${row.username} - ${row.password}`, async ({ loginPage, homePage }) => {
     meta({ priority: 'P2', severity: 'major', owner: 'vijay', story: 'US103', epic: 'ep301', feature: 'F32', issue: 'bug36' });
     await testData(testCSVData, 'Invalid Login Data');
 
@@ -104,7 +104,7 @@ for (let row of testCSVData) {
 //DD_2: read xlsx data directly from the excel file and loop the test method row wise
 let testExcelData = ExcelHelper.readExcel('src/testdata/opencarttestdata.xlsx', 'login');
 for (let row of testExcelData) {
-  test(`user should not be able to login to app with invalid credentials with excel data test - ${row.username} - ${row.password}`, async ({ loginPage, homePage }) => {
+  test(`@regression user should not be able to login to app with invalid credentials with excel data test - ${row.username} - ${row.password}`, async ({ loginPage, homePage }) => {
 
     meta({ priority: 'P2', severity: 'major', owner: 'vijay', story: 'US103', epic: 'ep301', feature: 'F32', issue: 'bug36' });
     await testData(testExcelData, 'Invalid Login Data');
@@ -118,7 +118,7 @@ for (let row of testExcelData) {
 //DD_3: read JOSN data directly from the JSON file and loop the test method row wise
 let testJSONData = JsonHelper.readJson('src/testdata/logindata.json');
 for (let row of testJSONData) {
-  test(`user should not be able to login to app with invalid credentials with json data test - ${row.username} - ${row.password}`, async ({ loginPage, homePage }) => {
+  test(`@regression user should not be able to login to app with invalid credentials with json data test - ${row.username} - ${row.password}`, async ({ loginPage, homePage }) => {
 
     meta({ priority: 'P2', severity: 'major', owner: 'vijay', story: 'US103', epic: 'ep301', feature: 'F32', issue: 'bug36' });
     await testData(testJSONData, 'Invalid Login Data');
@@ -131,20 +131,20 @@ for (let row of testJSONData) {
 
 //common features test:
 
-test('App logo exists on Login Page', async({basePage})=>{
+test('@smoke App logo exists on Login Page', async({basePage})=>{
     expect (await basePage.isLogoVisible()).toBeTruthy();
 });
 
 
-test('Search Box exists on Login Page', async({basePage})=>{
+test('@smoke Search Box exists on Login Page', async({basePage})=>{
     expect (await basePage.isSearchBoxVisible()).toBeTruthy();
 });
 
-test('Cart exists on Login Page', async({basePage})=>{
+test('@smoke Cart exists on Login Page', async({basePage})=>{
     expect (await basePage.isCartButtonVisible()).toBeTruthy();
 });
 
-test('Footers exists on Login Page', async({basePage})=>{
+test('@smoke Footers exists on Login Page', async({basePage})=>{
     expect (await basePage.getPageFootersCount()).toBe(16);
 });
 

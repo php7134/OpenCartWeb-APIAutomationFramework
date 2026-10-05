@@ -15,7 +15,7 @@ test.describe.serial('running E2E go rest crud apis tests', ()=>{
    
 
     //GET Test:
-   test('GET API - get all users', async({apiHelper})=>{
+   test('@smoke @regression GET API - get all users', async({apiHelper})=>{
     let response=await apiHelper.get('/public/v2/users', AUTH_HEADER);
     expect(response.status).toBe(200);
     expect(response.body.length).toBeGreaterThan(0);
@@ -23,7 +23,7 @@ test.describe.serial('running E2E go rest crud apis tests', ()=>{
    });
 
    //POST:
-    test('POST API - create a user', async({apiHelper})=>{
+    test('@regression POST API - create a user', async({apiHelper})=>{
 
      //User JS Object:   
     let userData=
@@ -44,7 +44,7 @@ test.describe.serial('running E2E go rest crud apis tests', ()=>{
    }); 
 
    //PUT:
-    test('PUT API - update a user', async({apiHelper})=>{
+    test('@regression PUT API - update a user', async({apiHelper})=>{
 
      //User JS Object:   
     let userData=
@@ -63,7 +63,7 @@ test.describe.serial('running E2E go rest crud apis tests', ()=>{
 
 
       //DELETE:
-    test('DELETE API - delete a user', async({apiHelper})=>{
+    test('@regression DELETE API - delete a user', async({apiHelper})=>{
 
     let response=await apiHelper.delete(`/public/v2/users/${userId}`, AUTH_HEADER);
     expect(response.status).toBe(204);
@@ -71,7 +71,7 @@ test.describe.serial('running E2E go rest crud apis tests', ()=>{
    });
 
    //GET Test:
-   test('GET API after deleting record - get all users', async({apiHelper})=>{
+   test('@regression GET API after deleting record - get all users', async({apiHelper})=>{
     let response=await apiHelper.get(`/public/v2/users/${userId}`, AUTH_HEADER);
     expect(response.status).toBe(404);
    

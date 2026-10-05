@@ -22,7 +22,7 @@ let productData = CsvHelper.readCsv('src/testdata/product.csv');
 for (let row of productData)
 {
 
-test(`verify the search results count - ${row.searchkey} - ${row.productname}`, async ({homePage, searchResultsPage})=>{
+test(`@regression verify the search results count - ${row.searchkey} - ${row.productname}`, async ({homePage, searchResultsPage})=>{
     await homePage.doSearch(row.searchkey);
     let actresultCount=await searchResultsPage.getSearchResultsCount();
     console.log('Search results count:', actresultCount);
@@ -33,7 +33,7 @@ test(`verify the search results count - ${row.searchkey} - ${row.productname}`, 
 
 for(let row of productData)
 {
-test(`verify user is able to land on the product page - ${row.searchkey} - ${row.productname}`, async ({homePage, searchResultsPage, page})=>{
+test(`@smoke verify user is able to land on the product page - ${row.searchkey} - ${row.productname}`, async ({homePage, searchResultsPage, page})=>{
 
     //testInfo.setTimeout(60000);
     await homePage.doSearch(row.searchkey);
@@ -46,19 +46,19 @@ test(`verify user is able to land on the product page - ${row.searchkey} - ${row
 
 //common features test:
 
-test('App logo exists on Login Page', async({basePage})=>{
+test('@smoke App logo exists on Login Page', async({basePage})=>{
     expect (await basePage.isLogoVisible()).toBeTruthy();
 });
 
 
-test('Search Box exists on Login Page', async({basePage})=>{
+test('@smoke Search Box exists on Login Page', async({basePage})=>{
     expect (await basePage.isSearchBoxVisible()).toBeTruthy();
 });
 
-test('Cart exists on Login Page', async({basePage})=>{
+test('@smoke Cart exists on Login Page', async({basePage})=>{
     expect (await basePage.isCartButtonVisible()).toBeTruthy();
 });
 
-test('Footers exists on Login Page', async({basePage})=>{
+test('@smoke Footers exists on Login Page', async({basePage})=>{
     expect (await basePage.getPageFootersCount()).toBe(16);
 });
