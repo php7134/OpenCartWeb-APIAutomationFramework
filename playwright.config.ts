@@ -9,7 +9,7 @@ import reportingLabs from './reporting-labs.config';
 
 const ENV = process.env.ENV || "qa";
 console.log('Running tests on Environment:', ENV);
-dotenv.config({ path: `config/.env.${ENV}`, override: true });
+dotenv.config({ path: `config/.env.${ENV}`, override: false });
 
 
 /**

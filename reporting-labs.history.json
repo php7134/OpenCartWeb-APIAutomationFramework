@@ -1571,5 +1571,20 @@
     6780
    ]
   }
+ },
+ {
+  "time": 1791200630810,
+  "duration": 9819.554,
+  "passed": 1,
+  "failed": 0,
+  "flaky": 0,
+  "skipped": 0,
+  "total": 1,
+  "tests": {
+   "chromium::tests/homepagefix.spec.ts::@smoke logout link exist test": [
+    "p",
+    4681
+   ]
+  }
  }
 ]
