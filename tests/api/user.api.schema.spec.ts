@@ -82,7 +82,7 @@ test('@smoke get a user - schema test', async ({apiHelper})=>
                 expect((getUserResponse).status).toBe(200);
 
         //verify the response schema:
-        let validate=ajv.compile(JSON.parse(fs.readFileSync('.src/schema/userschema.json', 'utf-8'))) ;
+        let validate=ajv.compile(JSON.parse(fs.readFileSync('src/schema/userschema.json', 'utf-8'))) ;
         let isSchemaValid=validate(getUserResponse.body);
 
         if(!isSchemaValid)

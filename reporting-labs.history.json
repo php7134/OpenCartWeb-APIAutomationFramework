@@ -1586,5 +1586,35 @@
     4681
    ]
   }
+ },
+ {
+  "time": 1791295689864,
+  "duration": 3754.584,
+  "passed": 0,
+  "failed": 1,
+  "flaky": 0,
+  "skipped": 0,
+  "total": 1,
+  "tests": {
+   "chromium::tests/api/user.api.schema.spec.ts::@smoke get a user - schema test": [
+    "f",
+    1714
+   ]
+  }
+ },
+ {
+  "time": 1791295724454,
+  "duration": 3680.1140000000005,
+  "passed": 1,
+  "failed": 0,
+  "flaky": 0,
+  "skipped": 0,
+  "total": 1,
+  "tests": {
+   "chromium::tests/api/user.api.schema.spec.ts::@smoke get a user - schema test": [
+    "p",
+    1717
+   ]
+  }
  }
 ]
