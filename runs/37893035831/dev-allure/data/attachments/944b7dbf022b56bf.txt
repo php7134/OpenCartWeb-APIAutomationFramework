@@ -1,0 +1,15 @@
+{
+  id: 8657380,
+  name: 'PW API Automation User4',
+  email: 'pwautomation_1791527171479@gmail.com',
+  gender: 'male',
+  status: 'active'
+} 201
+created user id: 8657380
+{
+  id: 8657380,
+  name: 'PW API Automation User4',
+  email: 'pwautomation_1791527171479@gmail.com',
+  gender: 'male',
+  status: 'active'
+} 200
