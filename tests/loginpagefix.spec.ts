@@ -24,7 +24,7 @@ test('@smoke login page title test', async ({ loginPage }) => {
 
 });
 
-test('@regression forgot password link exist test', async ({ loginPage }) => {
+test('forgot password link exist test', async ({ loginPage }) => {
 
   meta({ priority: 'P2', severity: 'critical', owner: 'tony', story: 'US101', epic: 'ep007', feature: 'F31', issue: '09' })
 
@@ -33,7 +33,7 @@ test('@regression forgot password link exist test', async ({ loginPage }) => {
 
 });
 
-test('@regression user is able to login  to  application test', async ({ loginPage, homePage }) => {
+test('user is able to login  to  application test', async ({ loginPage, homePage }) => {
 
   meta({ priority: 'P1', severity: 'blocker', owner: 'tom', story: 'US101', epic: 'ep007', feature: 'F31', issue: '09' })
   await testData({ username: ' process.env.USERNAME', password: 'process.env.PASSWORD' }, 'Login');
@@ -74,7 +74,7 @@ test('@regression user is able to login  to  application test', async ({ loginPa
 
 //DD_0: using test data from fixtures :sequence of test execution is important here, first the fixture will be executed and then the test method will be executed
 
-test(`@regression user should not be able to login to app with invalid credentials with fixture data test`, async ({ loginPage, testData }) => {
+test(`user should not be able to login to app with invalid credentials with fixture data test`, async ({ loginPage, testData }) => {
   for (let row of testData) {
 
     await loginPage.doLogin(row.username, row.password);

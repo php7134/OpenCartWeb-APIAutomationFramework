@@ -1,6 +1,6 @@
 # ═══════════════════════════════════════════════════════════════
 # FILE: .github/workflows/master-pipeline.yml
-# REPO: naveenanimation20/OpenCartWebAPIAutomationFramework
+# REPO: php7134/OpenCartWeb-APIAutomationFramework
 # DEV REPO: jglick/simple-maven-project-with-tests
 # ═══════════════════════════════════════════════════════════════
 # "Run up to environment" — the dropdown controls how far the
@@ -126,7 +126,7 @@ jobs:
           npx playwright test --project=chromium --grep @smoke
         env:
           ENV: dev
-          BASE_URL: ${{ secrets.BASE_URL }}
+          BASEURL: ${{ secrets.BASE_URL }}
           USERNAME: ${{ secrets.USERNAME }}
           PASSWORD: ${{ secrets.PASSWORD }}
           API_BASE_URL: ${{ secrets.API_BASE_URL }}
@@ -229,7 +229,7 @@ jobs:
           npx playwright test --project=chromium --grep @regression
         env:
           ENV: qa
-          BASE_URL: ${{ secrets.BASE_URL }}
+          BASEURL: ${{ secrets.BASE_URL }}
           USERNAME: ${{ secrets.USERNAME }}
           PASSWORD: ${{ secrets.PASSWORD }}
           API_BASE_URL: ${{ secrets.API_BASE_URL }}
@@ -332,7 +332,7 @@ jobs:
           npx playwright test --project=chromium --grep @smoke
         env:
           ENV: stage
-          BASE_URL: ${{ secrets.BASE_URL }}
+          BASEURL: ${{ secrets.BASE_URL }}
           USERNAME: ${{ secrets.USERNAME }}
           PASSWORD: ${{ secrets.PASSWORD }}
           API_BASE_URL: ${{ secrets.API_BASE_URL }}
@@ -706,7 +706,7 @@ jobs:
           username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{ secrets.EMAIL_PASSWORD }}
           subject: "🎭 CI/CD Pipeline [${{ github.event.inputs.environment }}] — ${{ steps.status.outputs.overall }} — ${{ github.ref_name }}"
-          to: naveenanimation20@gmail.com,training@naveenautomationlabs.com,shraddha.goel10@gmail.com,manishlalwani88@gmail.com,nbrnaveen@gmail.com,primeqa20@yahoo.com
+          to: naveenanimation20@gmail.com,training@naveenautomationlabs.com,php7134@gmail.com,php7134@outlook.com
           from: "CI Bot <${{ secrets.EMAIL_USERNAME }}>"
           html_body: file://dashboard.html
 
