@@ -1,6 +1,11 @@
 import {test,expect, APIResponse} from "@playwright/test";
 import { request } from "node:http";
 
+let userId:number;
+
+// Run tests in order, and skip the rest if one fails
+test.describe.configure({ mode: 'serial' });
+
 let AUTH_TOKEN =
 {
     Authorization :'Bearer f90871bc3bbff4ccc1ad4a830cf64be4e5cab53365d3e1989d448319625fbbec'
@@ -58,9 +63,9 @@ test('update a user PUT api test', async ({request})=>
         name:'PW API Automation3 User3',
         email:'pwapi777@automation.com',
         gender:'male',
-        status:'inactive'
+        status:'active'
     }
-    let response = await request.put('https://gorest.co.in/public/v2/users/8618648',
+    let response = await request.put('https://gorest.co.in/public/v2/users/${userId}',
     {
 
         headers: AUTH_TOKEN,
@@ -68,7 +73,7 @@ test('update a user PUT api test', async ({request})=>
 
     });
 
-   let jsonBody = await  response.json();
+   let jsonBody = await response.json();
    console.log(jsonBody);
 
    console.log(response.status());
@@ -82,7 +87,7 @@ test('update a user PUT api test', async ({request})=>
 test('delete a user PUT api test', async ({request})=>
     {
    
-    let response = await request.delete('https://gorest.co.in/public/v2/users/8618648',
+    let response = await request.delete('https://gorest.co.in/public/v2/users/${userId}',
     {
         headers: AUTH_TOKEN
         

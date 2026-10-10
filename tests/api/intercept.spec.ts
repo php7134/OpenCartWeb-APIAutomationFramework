@@ -35,7 +35,7 @@
     //naviagte to web app:
     await page.goto('https://abc.com/index.php?route=product/search&search=macbook');
 
-    await page.pause();
+    //await page.pause();
 
 
  });
