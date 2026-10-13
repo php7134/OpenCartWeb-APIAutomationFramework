@@ -1,0 +1,7 @@
+{
+  id: 8665653,
+  name: 'PW API Automation User7',
+  email: 'pwautomation_1791897585257@gmail.com',
+  gender: 'male',
+  status: 'inactive'
+} 200
