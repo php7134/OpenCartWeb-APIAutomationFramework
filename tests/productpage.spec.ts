@@ -16,14 +16,10 @@ test('@smoke verify product header', async ({homePage, searchResultsPage, produc
 
 });
 
-test('@regression verify product images count', async ({homePage, searchResultsPage, productInfoPage})=>{
-
-    await homePage.doSearch('macbook'); 
-    await searchResultsPage.selectProduct('MacBook Air');
-    //await page.pause();
-    expect(await productInfoPage.getProductImagesCount()).toBe(4); 
-    //await page.pause();
-
+test('@regression verify product images count', async ({ homePage, searchResultsPage, productInfoPage }) => {
+    await homePage.doSearch('macbook');
+    await searchResultsPage.selectProduct('MacBook Pro');
+    expect(await productInfoPage.getProductImagesCount()).toBe(4);
 });
 
 test('@regression verify product information/data count', async ({homePage, searchResultsPage, productInfoPage})=>{

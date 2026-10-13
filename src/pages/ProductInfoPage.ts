@@ -31,7 +31,7 @@ export class ProductInfoPage extends BasePage
   }
 
   async getProductImagesCount():Promise<number>{
-    //await this.productImages.waitFor({state:'visible'});
+    await this.productImages.first().waitFor({state:'visible'});
     return await this.productImages.count();
   }
 
