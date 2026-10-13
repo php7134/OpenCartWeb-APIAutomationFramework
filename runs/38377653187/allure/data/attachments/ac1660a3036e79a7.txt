@@ -1,0 +1,72 @@
+[
+  {
+    id: 8665308,
+    name: 'PW API Automation User4',
+    email: 'pwautomation_1791884306560@gmail.com',
+    gender: 'male',
+    status: 'active'
+  },
+  {
+    id: 8665305,
+    name: 'apiautomation-update',
+    email: 'apiautomation_1791884304862@open.com',
+    gender: 'male',
+    status: 'inactive'
+  },
+  {
+    id: 8665306,
+    name: 'apiautomation',
+    email: 'apiautomation_1791884305004@open.com',
+    gender: 'male',
+    status: 'active'
+  },
+  {
+    id: 8664817,
+    name: 'PW API Automation User3',
+    email: 'pwautomation_1791874421209@open.com',
+    gender: 'male',
+    status: 'active'
+  },
+  {
+    id: 8664814,
+    name: 'PW API Automation User3',
+    email: 'pwautomation_1791874416134@open.com',
+    gender: 'male',
+    status: 'active'
+  },
+  {
+    id: 8664811,
+    name: 'PW API Automation User3',
+    email: 'pwautomation_1791874408330@open.com',
+    gender: 'male',
+    status: 'active'
+  },
+  {
+    id: 8664810,
+    name: 'PW API Automation User4',
+    email: 'pwautomation_1791874404566@gmail.com',
+    gender: 'male',
+    status: 'active'
+  },
+  {
+    id: 8664806,
+    name: 'apiautomation-update',
+    email: 'apiautomation_1791874398503@open.com',
+    gender: 'male',
+    status: 'inactive'
+  },
+  {
+    id: 8664804,
+    name: 'apiautomation',
+    email: 'apiautomation_1791874396862@open.com',
+    gender: 'male',
+    status: 'active'
+  },
+  {
+    id: 8664773,
+    name: 'PW API Automation User3',
+    email: 'pwautomation_1791873290726@open.com',
+    gender: 'male',
+    status: 'active'
+  }
+] 200

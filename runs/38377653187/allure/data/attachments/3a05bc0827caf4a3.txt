@@ -1,0 +1,9 @@
+{
+  id: 8665312,
+  name: 'PW API Automation User3',
+  email: 'pwautomation_1791884310830@open.com',
+  gender: 'male',
+  status: 'active'
+}
+201
+Created
