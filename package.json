@@ -16,8 +16,8 @@
   "author": "php7134",
   "type": "module",
   "devDependencies": {
-    "@playwright/test": "^1.63.0",
-    "@types/node": "^26.11.1",
+    "@playwright/test": "^1.64.0",
+    "@types/node": "^26.6.5",
     "allure-commandline": "^2.46.1",
     "allure-playwright": "^3.12.2",
     "reporting-labs": "^0.6.16"

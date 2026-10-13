@@ -38,6 +38,7 @@ export default defineConfig({
   reporter: process.env.CI ?
 
     [
+      ["blob"],
       ['list'],
       ['html', { outputFolder: "reports/html-report", open: "never" }],
       ["allure-playwright", {
@@ -48,6 +49,7 @@ export default defineConfig({
 
     ] :
     [
+      ["blob", { outputDir: "blob-report" }],
       ['list'],
       ['html', { outputFolder: "reports/html-report", open: "never" }],
       ["allure-playwright", {
@@ -59,7 +61,7 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
-    baseURL: process.env.BASEURL,
+    baseURL: process.env.BASE_URL,
     headless: !process.env.CI ? false : true,
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
