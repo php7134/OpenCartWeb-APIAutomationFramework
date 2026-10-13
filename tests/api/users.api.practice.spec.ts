@@ -48,6 +48,9 @@ test('create a user POST api test', async ({request})=>
    let jsonBody = await  response.json();
    console.log(jsonBody);
 
+   userId = jsonBody.id;
+   expect(userId).toBeTruthy();
+
    console.log(response.status());
    console.log(response.statusText());
 
@@ -65,7 +68,7 @@ test('update a user PUT api test', async ({request})=>
         gender:'male',
         status:'active'
     }
-    let response = await request.put('https://gorest.co.in/public/v2/users/${userId}',
+    let response = await request.put(`https://gorest.co.in/public/v2/users/${userId}`,
     {
 
         headers: AUTH_TOKEN,
@@ -84,10 +87,10 @@ test('update a user PUT api test', async ({request})=>
 
 });
 
-test('delete a user PUT api test', async ({request})=>
+test('delete a user api test', async ({request})=>
     {
    
-    let response = await request.delete('https://gorest.co.in/public/v2/users/${userId}',
+    let response = await request.delete(`https://gorest.co.in/public/v2/users/${userId}`,
     {
         headers: AUTH_TOKEN
         
@@ -104,3 +107,14 @@ test('delete a user PUT api test', async ({request})=>
 
 });
 
+test('verify user is deleted', async ({request})=>
+    {
+    let response = await request.get(`https://gorest.co.in/public/v2/users/${userId}`, {
+        headers: AUTH_TOKEN
+    });
+
+    console.log(response.status());
+    console.log(response.statusText());
+
+    expect(response.status()).toBe(404);
+});
